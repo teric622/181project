@@ -44,15 +44,13 @@ abstract public class Piece {
         this.original = original;
     }
 
-    public void speak(){
-        System.out.println(" ");
-    }
+    public abstract void speak();
 
 
   //noting validMovePath
 
-    public boolean canSpawn(){
-        return true;
-    }
+    public abstract Piece spawn();
+
+    public abstract boolean canSpawn();
 
 }

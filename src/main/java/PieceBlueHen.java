@@ -20,35 +20,22 @@ public class PieceBlueHen extends Piece{
                 false,true);
     }
 
-    public char getSymbol() {
-        return symbol;
-    }
-    @Override
-    public String getTeamColor() {
-        return teamColor;
-    }
+
+
     public int getNumAttacks()    {
         return this.numAttacks;
     }
     public int getNumRecruits(){
         return this.numRecruits;
     }
-    public boolean isHidden() {
-        return hidden;
-    }
-    public boolean isOriginal() {
-        return original;
-    }
+
+
     public boolean canFly()    {
         return this.flies;
     }
 
-    public void setSymbol(char symbol) {
-        this.symbol = symbol;
-    }
-    public void setTeamColor(String teamColor) {
-        this.teamColor = teamColor;
-    }
+
+
 
     public void setNumAttacks(int numAttacks)    {
         this.numAttacks = numAttacks;
@@ -57,12 +44,7 @@ public class PieceBlueHen extends Piece{
     public void setNumRecruits(int numRecruits)    {
         this.numRecruits = numRecruits;
     }
-    public void setHidden(boolean hidden) {
-        this.hidden = hidden;
-    }
-    public void setOriginal(boolean original) {
-        this.original = original;
-    }
+
 
     private void updateFly()    {
         if (this.numAttacks < MAX_NUM_ATTACKS){
@@ -92,6 +74,7 @@ public class PieceBlueHen extends Piece{
     }
 
     public boolean canSpawn(){
+
         return true;
     }
 }
