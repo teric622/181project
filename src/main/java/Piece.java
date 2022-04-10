@@ -49,8 +49,25 @@ abstract public class Piece {
 
   //noting validMovePath
 
-    public abstract Piece spawn();
+    abstract public Piece spawn();
 
-    public abstract boolean canSpawn();
+    abstract public boolean canSpawn();
+
+    abstract public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+                                          int toSquareRow, int toSquareCol);
+
+    @Override
+    public String toString(){
+        return this.teamColor+ "--- " + this.teamColor;
+    }
 
 }
+
+
+    //Override the toString method to Piece class that returns the teamColor
+// followed by three dashes (---) a single space followed by the symbol.
+       // Create a folder (can right click on the Piece class name/ select Generate/ select Test)
+// for your JUnit Testing of your Piece classes. '
+// Copy and paste the code from PieceTest.java class on Canvas.
+// Please note that this test code only tests SOME aspects of your solution and NOT ALL of them.
+
