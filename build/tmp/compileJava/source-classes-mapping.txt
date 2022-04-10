@@ -10,3 +10,5 @@ GameBoard.java
  GameBoard
 BoardSquare.java
  BoardSquare
+PieceEvilMinion.java
+ PieceEvilMinion

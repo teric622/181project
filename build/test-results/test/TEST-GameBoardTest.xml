@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GameBoardTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-04-10T16:10:16" hostname="LAPTOP-OMECL1UR" time="0.033">
+<testsuite name="GameBoardTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-04-10T16:21:53" hostname="LAPTOP-OMECL1UR" time="0.036">
   <properties/>
-  <testcase name="testingBoard()" classname="GameBoardTest" time="0.033">
+  <testcase name="testingBoard()" classname="GameBoardTest" time="0.036">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;Blu--- Blu&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;Blu--- Blu&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:48)

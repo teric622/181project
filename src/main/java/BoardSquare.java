@@ -26,7 +26,7 @@ public class BoardSquare {
         Piece removedPiece;
         removedPiece = pieceInSquare;
         pieceInSquare = null;
-        return pieceInSquare;
+        return removedPiece;
     }
 
     public String toString(){
