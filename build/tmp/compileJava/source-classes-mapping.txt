@@ -6,3 +6,7 @@ PieceBlueHen.java
  PieceBlueHen
 PieceMinion.java
  PieceMinion
+GameBoard.java
+ GameBoard
+BoardSquare.java
+ BoardSquare
