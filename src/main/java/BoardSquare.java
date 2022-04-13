@@ -20,15 +20,17 @@ public class BoardSquare {
 
     public void setPiece(Piece gamePiece){
         pieceInSquare = gamePiece;
+        empty = false;
     }
 
     public Piece removePiece(){
         Piece removedPiece;
         removedPiece = pieceInSquare;
         pieceInSquare = null;
+        empty = true;
         return removedPiece;
     }
-
+@Override
     public String toString(){
         if (pieceInSquare == null){
             return "-------";

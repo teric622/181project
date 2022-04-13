@@ -32,6 +32,13 @@ public class PieceMinion extends Piece{
         this.numRecruits = numRecruits;
     }
 
+    public void setTeamColor(String teamColor){
+        this.teamColor = teamColor;
+    }
+    public void addNumTimesSpawned(int numTimesSpawned){
+        this.numTimesSpawned+=1;
+    }
+
     public void speak(){
         System.out.println("Bello!");
     }
@@ -42,6 +49,9 @@ public class PieceMinion extends Piece{
         // each Piece will have a different valid path
         return true;
     }
+
+
+
 //pieceminion1 was there originally
     public PieceMinion spawn(){
         return new PieceMinion(Character.toLowerCase(this.symbol),
@@ -54,5 +64,6 @@ public class PieceMinion extends Piece{
     public boolean canSpawn(){
         return original && numTimesSpawned < MAX_NUM_SPAWNED;
     }
+
 
 }

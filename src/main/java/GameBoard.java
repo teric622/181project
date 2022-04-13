@@ -1,6 +1,6 @@
 public class GameBoard{
-    private int rows = 0;
-    private int columns = 0;
+    private int rows;
+    private int columns;
     private BoardSquare[][] squares;
 
     public GameBoard(int row, int column){
@@ -8,7 +8,7 @@ public class GameBoard{
         columns = column;
         squares = new BoardSquare[row][column];
         //why can't resolve
-       setUpEmptyBoard();
+        setUpEmptyBoard();
     }
     public int getNumRows(){
         return squares.length;
@@ -40,17 +40,16 @@ public class GameBoard{
         }
     }
     public BoardSquare findRandomEmptySpace(){
-        boolean flag = true;
-        int row =0;
-        int column=0;
-        while(flag){
-            row = (int)Math.random()*((rows-1)+1);
-            column = (int)Math.random()*((columns-1)+1);
-            if (squares[row][column].isEmpty()){
-                flag = false;
+        int row;
+        int column;
+        while(true){
+            row = (int)(Math.random()*rows);
+            column = (int)(Math.random()*columns);
+
+            if (squares[row][column].isEmpty()) {
+                return squares[row][column];
             }
         }
-        return squares[row][column];
     }
     public String toString(){
         StringBuilder boardString = new StringBuilder();

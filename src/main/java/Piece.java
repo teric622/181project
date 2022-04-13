@@ -58,7 +58,7 @@ abstract public class Piece {
 
     @Override
     public String toString(){
-        return this.teamColor+ "--- " + this.teamColor;
+        return this.teamColor+ " " + this.symbol;
     }
 
 }

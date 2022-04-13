@@ -6,7 +6,8 @@ public class PieceBlueHen extends Piece{
 
     final public int MAX_NUM_ATTACKS = 3;
 
-    public PieceBlueHen (char symbol, String teamColor, int numAttacks, int numRecruits, boolean hidden, boolean original){
+    public PieceBlueHen (char symbol, String teamColor, int numAttacks,
+                         int numRecruits, boolean hidden, boolean original){
         super(symbol,teamColor,hidden,original);
         this.numAttacks = numAttacks;
         this.numRecruits = numRecruits;
