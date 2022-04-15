@@ -1,7 +1,18 @@
 import java.util.Collections;
 
-//UNFINISHED CODE, MAIN PROBLEM IS WITH initializeGameBoard METHOD
-//Main question is, how many pieces should we add to the board for each team
+/**
+ * <h1>Lab5</h1>
+ * <h2>CISC 181-012  2022 </h2>
+ * <h3>University of Delaware</h3>
+ * <p>
+ * The Lab5() program implements an application that covers
+ * the following topics: Refactoring Code to Creating object hierarchies, Creating and Extending Abstract Classes,
+ * Overriding methods for polymorphism, Implementing pre-defined Object method toString,
+ * Two-Dimensional Arrays with Reference Types
+ *
+ * @author Ameer Abdelnasser, Eric Tlaseca - Morales, Tabetha Chubb
+ * @since 2022-04-12
+ */
 
 public class Game {
     private GameBoard board;
@@ -9,11 +20,21 @@ public class Game {
     private Team secondTeam;
     private String turn;
 
+    /**
+     * This method creates a new Gameboard object and sets both teams pieces on the board
+     * @param numRows - an int parameter that is taken in by the method and represents the number of rows for each board
+     * @param numCol - an int parameter that is taken in by the method and represents the number
+     *              columns for each board
+     * @return - returns a new Gameboard with pieces on it from each team
+     */
     public GameBoard initializeGameBoard(int numRows, int numCol){
         board = new GameBoard(numRows, numCol);
+        //for loop goes through each piece for team1, finds random empty spaces and places pieces on those spaces
         for (Piece pieceInTeam: firstTeam.getTeamPieces()){
             board.findRandomEmptySpace().setPiece(pieceInTeam);
         }
+        //Same functionality as the for loop prior to this one except it executes the same process on
+        //team 2 for their pieces
         for (Piece pieceInTeam: secondTeam.getTeamPieces()){
             board.findRandomEmptySpace().setPiece(pieceInTeam);
         }
@@ -21,6 +42,15 @@ public class Game {
         return board;
     }
 
+    /**
+     * This is the constructor used for the game. It assigns the teams to their respected variables and
+     * initializes the GameBoard
+     * @param numRows - an int parameter that is taken in by the method and represents the number of rows for each board
+     * @param numCol - an int parameter that is taken in by the method and represents
+     *               the number of columns for each board
+     * @param firstTeam - a Team type parameter that represents the first team in the game
+     * @param secondTeam - a Team type parameter that represents the second team in the game
+     */
     public Game(int numRows, int numCol, Team firstTeam, Team secondTeam){
         this.firstTeam = firstTeam;
         this.secondTeam = secondTeam;
@@ -29,9 +59,11 @@ public class Game {
 
     }
 
+
     public GameBoard getGameBoard(){
         return board;
     }
+
 
     public Team getCurrentTeam(){
         if (turn == firstTeam.getTeamColor()){
@@ -42,6 +74,7 @@ public class Game {
         }
     }
 
+
     public Team getOpponentTeam(){
         if (turn == firstTeam.getTeamColor()){
             return secondTeam;
@@ -51,6 +84,11 @@ public class Game {
         }
     }
 
+    /**
+     *checks team that is entered as parameter, and sees if that team is supposed to have their turn
+     * @param coolTeam - Team type that is entered and checked to see if it equals the current turn variable
+     * @return - returns a boolean that says whether or not said team is supposed to have their turn
+     */
     public boolean isTurn(Team coolTeam){
         if (this.turn == coolTeam.getTeamColor()){
             return true;
@@ -65,17 +103,28 @@ public class Game {
         return board.getSquares();
     }
 
+    /**
+     * Does not have any parameters or return anything.
+     * The purpose of this method is to change which team gets to go.
+     * In others words, changing who's turn it is.
+     */
     public void changeTurn(){
+        //if the turn of the first team has passed, then its
+        //the seconds team turn, the one with a diffrent team color
         if (turn == firstTeam.getTeamColor()){
             turn = secondTeam.getTeamColor();
         }
+        //otherwise its the firstteam turn
         else{
             turn = firstTeam.getTeamColor();
         }
     }
 
 
-
+    /**
+     * updated toString method from lab instructions
+     * @return - returns the updated toString method
+     */
     public String toString(){
         StringBuilder retString = new StringBuilder();
         retString.append("Game Board:\n")
