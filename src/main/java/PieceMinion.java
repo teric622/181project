@@ -17,7 +17,7 @@
 
 
 
-public class PieceMinion extends Piece{
+public class PieceMinion extends Piece implements Recruiter{
 
 
     private int numRecruits;
@@ -125,6 +125,13 @@ public class PieceMinion extends Piece{
     public boolean canSpawn(){
         return original && numTimesSpawned < MAX_NUM_SPAWNED;
     }
+
+
+
+    public boolean validRecruitPath(int rowIndexRecruiting, int columnIndexRecruiting, int  rowIndexRecruted, int columnIndexRecruted){
+        return true;
+    }
+
 
 
 }

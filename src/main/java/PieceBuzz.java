@@ -17,7 +17,7 @@
 
 
 
-public class PieceBuzz extends Piece{
+public class PieceBuzz extends Piece implements Attacker{
 
     private int numAttacks;
     private int numTimesBeenAttacked;
@@ -126,6 +126,10 @@ public class PieceBuzz extends Piece{
      */
     public boolean canSpawn(){
         return false;
+    }
+
+    public boolean validAttackPath(int rowIndexAttacking, int columnIndexAttacking, int  rowIndexAttacked, int columnIndexAttacked){
+        return true;
     }
 
 

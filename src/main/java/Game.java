@@ -14,11 +14,11 @@ import java.util.Collections;
  * @since 2022-04-12
  */
 
-public class Game {
-    private GameBoard board;
-    private Team firstTeam;
-    private Team secondTeam;
-    private String turn;
+public abstract class Game {
+    protected GameBoard board;
+    protected Team firstTeam;
+    protected Team secondTeam;
+    protected String turn;
 
     /**
      * This method creates a new Gameboard object and sets both teams pieces on the board
@@ -27,6 +27,16 @@ public class Game {
      *              columns for each board
      * @return - returns a new Gameboard with pieces on it from each team
      */
+
+
+    public Game(int numRows, int numCol, Team firstTeam, Team secondTeam){
+        this.firstTeam = firstTeam;
+        this.secondTeam = secondTeam;
+        this.turn = firstTeam.getTeamColor();
+        initializeGameBoard(numRows, numCol);
+
+    }
+
     public GameBoard initializeGameBoard(int numRows, int numCol){
         board = new GameBoard(numRows, numCol);
         //for loop goes through each piece for team1, finds random empty spaces and places pieces on those spaces
@@ -42,22 +52,8 @@ public class Game {
         return board;
     }
 
-    /**
-     * This is the constructor used for the game. It assigns the teams to their respected variables and
-     * initializes the GameBoard
-     * @param numRows - an int parameter that is taken in by the method and represents the number of rows for each board
-     * @param numCol - an int parameter that is taken in by the method and represents
-     *               the number of columns for each board
-     * @param firstTeam - a Team type parameter that represents the first team in the game
-     * @param secondTeam - a Team type parameter that represents the second team in the game
-     */
-    public Game(int numRows, int numCol, Team firstTeam, Team secondTeam){
-        this.firstTeam = firstTeam;
-        this.secondTeam = secondTeam;
-        this.turn = firstTeam.getTeamColor();
-        initializeGameBoard(numRows, numCol);
 
-    }
+
 
 
     public GameBoard getGameBoard(){
@@ -119,6 +115,20 @@ public class Game {
             turn = firstTeam.getTeamColor();
         }
     }
+
+//lab7
+
+    /*
+    To your Game Class from Lab 5, add the following abstract methods:
+isAWinner- that has no parameters and returns a boolean
+getWinner – that has no parameters and returns a Team
+isGameEnded – that has no parameters and returns a boolean
+Modify the header of your class to allow for these abstract methods.
+     */
+    public abstract boolean isAWinner();
+    public abstract Team getWinner();
+    public abstract boolean isGameEnded();
+
 
 
     /**

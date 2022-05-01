@@ -15,7 +15,7 @@
  */
 
 
-public class PieceBlueHen extends Piece{
+public class PieceBlueHen extends Piece implements Attacker,Recruiter{
 
     private int numAttacks;
     private int numRecruits;
@@ -135,11 +135,29 @@ public class PieceBlueHen extends Piece{
         return copyHen;
     }
 
+
+
     /**
      * @return boolean value of true instutuing that a piece can spawn
      */
     public boolean canSpawn(){
 
         return true;
+
     }
+
+
+    public boolean validAttackPath(int rowIndexAttacking, int columnIndexAttacking, int  rowIndexAttacked, int columnIndexAttacked){
+        return true;
+    }
+
+
+
+    public boolean validRecruitPath(int rowIndexRecruiting, int columnIndexRecruiting, int  rowIndexRecruted, int columnIndexRecruted){
+        return true;
+    }
+
+
+
+
 }

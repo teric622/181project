@@ -11,7 +11,7 @@
  * @author Ameer Abdelnasser, Eric Tlaseca, Tabetha Chubb
  * @since 2022-04-12
  */
-public class PieceEvilMinion extends PieceMinion{
+public class PieceEvilMinion extends PieceMinion implements Attacker,Recruiter{
     private int numAttacks;
     private boolean hungry;
     final private int MAX_NUM_ATTACKS = 4;
@@ -91,5 +91,15 @@ public class PieceEvilMinion extends PieceMinion{
         return bagel;
     }
 
+
+    public boolean validAttackPath(int rowIndexAttacking, int columnIndexAttacking, int  rowIndexAttacked, int columnIndexAttacked){
+        return true;
+    }
+
+
+
+    public boolean validRecruitPath(int rowIndexRecruiting, int columnIndexRecruiting, int  rowIndexRecruted, int columnIndexRecruted){
+        return true;
+    }
 
 }
